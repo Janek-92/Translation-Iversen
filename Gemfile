@@ -64,4 +64,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gems added by Janek Iversen
-gem 'simple_form', github: 'heartcombo/simple_form'

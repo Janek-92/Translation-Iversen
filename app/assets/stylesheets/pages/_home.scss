@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.homeHeadContent {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+.video-intro {
+  border-radius: 5px;
+  width: 65%;
+  height: 65%;
+  border: 10px solid whitesmoke;
+  margin: 0 auto;
+  display: block;
+}
+
+.footer {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
