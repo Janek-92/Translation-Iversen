@@ -2,7 +2,9 @@
   <div class="homeHeadContent">
     <div class="navbar navbar-expand-lg navbar-light">
       <div class="navbar-brand">
+        <%= link_to root_path do %>
         <img src="<%= image_path "logo2" %>" alt="Iversen Logo" class="avatar-square">
+        <% end %>
       </div>
       <div class="d-flex justify-content-end navbar-buttons">
         <%= link_to 'Work with us!', new_service_path, :class => "nav-button-work" %>
@@ -27,7 +29,7 @@
     <div class="text-center p-2">
       <div class="col">
         <% if @query %>
-          <p>You searched for <strong><%= @query %></strong>. We found <%= @services.count %> <%= @service.category %> services out of our <%= Service.count %> on our website.</p>
+          <p>You searched for <strong><%= @query %></strong>. We found <%= @services.count %> services out of our <%= Service.count %> on our website.</p>
         <% else %>
           <p>All <%= Service.count %> services</p>
         <% end %>
@@ -39,6 +41,12 @@
     <% @services.each do |service| %>
       <div class="item-card">
         <%= link_to  service_path(@services) do %>
+        <div class="item-card-image">
+          <% if service.photo.key.nil? %>
+          <% else %>
+            <%= cl_image_tag service.photo.key, class: "item-avatar" %>
+          <% end %>
+        </div>
         <div class="item-card-image">
         </div>
         <div class="card-item-content">
@@ -52,4 +60,5 @@
       </div>
     <% end %>
   </div>
+  <h3 class="text-center"><%= link_to "Go back", root_path, :class => "btn btn-link" %></h3>
 </div>

@@ -28,6 +28,9 @@
   font-size: 14px;
 }
 
+.item-card .btn {
+  //background-color: $tomato-red;
+}
 
 .item-card {
   width: 100%;
@@ -64,7 +67,9 @@
   //background-size: cover;
   height: 200px;
   width: 100%;
+  border-radius: 10px;
   object-fit: cover;
+  background-color: #413f42;
 }
 
 .card-item-content {
@@ -118,6 +123,6 @@
 }
 
 .rate i {
-  color: yellow;
+  color: yello;
   pointer-events: none;
 }
