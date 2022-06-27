@@ -17,6 +17,7 @@
     </div>
   </div>
 
+
   <div class="container py-5">
     <div class="row form-new">
       <div class="form-upload shadow-sm p-3 mb-5 bordered col-12 col-md-6 offset-lg-3 justify-content-center p-5" style="background-color: #354558">
@@ -25,6 +26,8 @@
               <%= simple_form_for(@service) do |f| %>
                 <%= f.input :title, placeholder: "Name your service", class: "form-inputs" %>
                 <%= f.input :category, collection: Service::CATEGORIES, placeholder: "What's the category?", :class => "input-field" %>
+                <%= f.input :primary_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your primary language?", :class => "input-field" %>
+                <%= f.input :target_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your target language?", :class => "input-field" %>
                 <%= f.input :price, placeholder: "What's your hourly rate?", :class => "input-field" %>
                 <%= f.input :description, placeholder: "Provide some more info!", :class => "input-field" %>
                 <%= f.input :availability, :class => "input-field" %>
