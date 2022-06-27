@@ -1,0 +1,51 @@
+<body class="background">
+  <div class="homeHeadContent">
+    <div class="navbar navbar-expand-lg navbar-light">
+      <div class="navbar-brand">
+        <%= link_to root_path do %>
+        <%= image_tag "logo2.png", class:"avatar-square" %>
+      </div>
+      <div class="d-flex justify-content-end align-items-center m-4">
+        <% if user_signed_in? %>
+        <%= current_user.email %>
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
+        <% else %>
+          <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen" %>
+          <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row form-new">
+      <div class="form-upload shadow-sm p-3 mb-5 bordered col-12 col-md-6 offset-lg-3 justify-content-center p-5" style="background-color: #354558">
+        <div class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div class="centered"> <h2>Share your skills with the world!</h2></div>
+              <%= simple_form_for(@service) do |f| %>
+                <%= f.input :title, placeholder: "Name your service", class: "form-inputs" %>
+                <%= f.input :category, collection: Service::CATEGORIES, placeholder: "What's the category?", :class => "input-field" %>
+                <%= f.input :price, placeholder: "What's your hourly rate?", :class => "input-field" %>
+                <%= f.input :description, placeholder: "Provide some more info!", :class => "input-field" %>
+                <%= f.input :availability, :class => "input-field" %>
+                <div>
+                  <p class="text-center text-gray-500 text-xs">
+                  Make sure that all information is correct!
+                  </p>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto justify-content-center">
+                  <div class="form-actions nav-button-iversen">
+                    <%= f.button :submit, "Upload" %>
+                  </div>
+                </div>
+                <div class="centered">
+                  <%= link_to 'Back', services_path %>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
