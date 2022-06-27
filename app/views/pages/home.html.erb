@@ -4,15 +4,30 @@
       <div class="navbar-brand">
         <img src="<%= image_path "logo2" %>" alt="Iversen Logo" class="avatar-square">
       </div>
-      <div class="d-flex justify-content-end align-items-center m-4">
+      <div class="d-flex justify-content-end navbar-buttons">
+        <%= link_to 'Work with us!', new_service_path, :class => "nav-button-work" %>
         <% if user_signed_in? %>
+        <div class="form-new">
         <%= current_user.email %>
+        </div>
           <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
         <% else %>
           <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen" %>
           <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen" %>
         <% end %>
       </div>
+    </div>
+    <h1> Translations and Interpretation Services</h1>
+    <h1> <strong> IVERSEN </strong></h1>
+    <div class="container-search-bar">
+      <%= form_tag services_path, :class => "search-bar", method: :get do %>
+       <%= text_field_tag :query,
+       params[:query],
+       class: "form-control search-input",
+       placeholder: "What service do you need?"
+       %>
+       <%= submit_tag "Search", class: "nav-button-iversen" %>
+      <% end %>
     </div>
   </div>
 

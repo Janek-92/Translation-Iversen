@@ -1,0 +1,55 @@
+<body class="background">
+  <div class="homeHeadContent">
+    <div class="navbar navbar-expand-lg navbar-light">
+      <div class="navbar-brand">
+        <img src="<%= image_path "logo2" %>" alt="Iversen Logo" class="avatar-square">
+      </div>
+      <div class="d-flex justify-content-end navbar-buttons">
+        <%= link_to 'Work with us!', new_service_path, :class => "nav-button-work" %>
+        <% if user_signed_in? %>
+        <div class="form-new">
+        <%= current_user.email %>
+        </div>
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
+        <% else %>
+          <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen" %>
+          <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="under-nav-breaker">
+    <!-- Make space under navbar -->
+  </div>
+
+  <div class="container-number-items">
+    <div class="text-center p-2">
+      <div class="col">
+        <% if @query %>
+          <p>You searched for <strong><%= @query %></strong>. We found <%= @services.count %> <%= @service.category %> services out of our <%= Service.count %> on our website.</p>
+        <% else %>
+          <p>All <%= Service.count %> services</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards" id="cards-container">
+    <% @services.each do |service| %>
+      <div class="item-card">
+        <%= link_to  service_path(@services) do %>
+        <div class="item-card-image">
+        </div>
+        <div class="card-item-content">
+          <h2><%= service.title %></h2>
+          <p><%= service.category %></p>
+        </div>
+        <div class="card-item-pricing">
+          <h2><%= service.price %> € / Hour</h2>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+.container-number-items {
+  display: grid;
+  font-size: 18px;
+  color: $iversen-green;
+  opacity: 0.7;
+}
+
+.item-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.item-card p {
+  font-size: 15px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.card-item-pricing h2 {
+  font-size: 18px;
+  color: #413f42;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.card-item-pricing span {
+  font-size: 14px;
+}
+
+
+.item-card {
+  width: 100%;
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 16px;
+  margin: 0 40px;
+  text-decoration: none;
+  & :hover {
+    border: 2px outset $iversen-green;
+    color: $iversen-green;
+    background: #fff;
+    opacity: 0.9;
+  }
+  a {
+    text-decoration: none;
+    color: black !important;
+  }
+}
+
+.item-card-image > img {
+  //height: 180px;
+  //background-position: center;
+  //background-size: cover;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-item-content {
+  padding: 24px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  pointer-events: none;
+}
+
+.item-card-actions {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.margin-top-negative {
+  margin-top: -75px;
+}
+.no-mb {
+  margin-bottom: 0;
+}
+
+//.card-item-pricing {
+//display: flex;
+//justify-content: end;
+//align-items: center;
+//padding: 18px;
+//display: flex;
+//justify-content: end;
+//align-items: flex-end;
+//position: relative;
+//}
+
+.card-item-pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  pointer-events: none;
+}
+
+.rate i {
+  color: yellow;
+  pointer-events: none;
+}
