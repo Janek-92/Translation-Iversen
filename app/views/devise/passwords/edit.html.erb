@@ -1,27 +1,61 @@
-<h2>Change your password</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :reset_password_token, as: :hidden %>
-  <%= f.full_error :reset_password_token %>
-
-  <div class="form-inputs">
-    <%= f.input :password,
-                label: "New password",
-                required: true,
-                autofocus: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                label: "Confirm your new password",
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<body class="background">
+  <div class="homeHeadContent">
+    <div class="navbar navbar-expand-lg navbar-light">
+      <div class="navbar-brand">
+        <%= link_to root_path do %>
+        <%= image_tag "logo2.png", class:"avatar-square" %>
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-end align-items-center m-4">
+        <% if user_signed_in? %>
+        <%= current_user.email %>
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen btn btn-outline-iversen-green" %>
+        <% else %>
+          <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen"%>
+          <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen"%>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+   <div class="under-nav-breaker">
+    <!-- Make space under navbar -->
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="container py-5">
+    <div class="row login-form">
+      <div class="form-upload shadow-sm p-3 mb-5 bordered col-12 col-md-6 offset-lg-3 justify-content-center" style="background-color: #354558">
+        <div class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div class="centered"> <h2>Change your password</h2></div>
+
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+              <%= f.error_notification %>
+
+              <%= f.input :reset_password_token, as: :hidden %>
+              <%= f.full_error :reset_password_token %>
+
+              <div class="form-inputs">
+                <%= f.input :password,
+                            label: "New password",
+                            required: true,
+                            autofocus: true,
+                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            label: "Confirm your new password",
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+              </div>
+              <div>
+                <div class="form-actions nav-button-iversen">
+                  <%= f.button :submit, "Change my password" %>
+                </div>
+              </div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

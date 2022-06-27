@@ -2,15 +2,15 @@
   <div class="homeHeadContent">
     <div class="navbar navbar-expand-lg navbar-light">
       <div class="navbar-brand">
-        <img src="<%= image_path "logo1" %>" alt="Iversen Logo" class="avatar-square">
+        <img src="<%= image_path "logo2" %>" alt="Iversen Logo" class="avatar-square">
       </div>
       <div class="d-flex justify-content-end align-items-center m-4">
         <% if user_signed_in? %>
-        <!--<%= current_user.email %>-->
-          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-text" %>
+        <%= current_user.email %>
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
         <% else %>
-          <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-text" %>
-          <%= link_to 'LOGIN', new_user_session_path, :class => "nav-text"%>
+          <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen" %>
+          <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen" %>
         <% end %>
       </div>
     </div>
@@ -24,7 +24,7 @@
 
   <div class="footer">
     <div class="footer">
-      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="https://github.com/Janek-92"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/janek-iversen-10511786"><i class="fab fa-linkedin"></i></a>
     </div>
     <div class="footer-copyright">

@@ -4,3 +4,19 @@
   justify-content: right;
   width: 100%;
 }
+
+.nav-button-iversen {
+  background-color: $iversen-green;
+  color: white;
+  padding: 8px;
+  margin: 2px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.nav-button-iversen:hover {
+  opacity: 1;
+  background-color: $iversen-green;
+  color: white;
+  border: 2px solid white;
+}
