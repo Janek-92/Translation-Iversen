@@ -28,9 +28,6 @@
   font-size: 14px;
 }
 
-.item-card .btn {
-  //background-color: $tomato-red;
-}
 
 .item-card {
   width: 100%;
@@ -45,7 +42,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
   margin: 0 40px;
   text-decoration: none;
@@ -60,23 +57,31 @@
     color: black !important;
   }
 }
+.item-card-image {
+  //height: 180px;
+  //background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  background-color: #413f42;
+}
 
 .item-card-image > img {
   //height: 180px;
   //background-position: center;
-  //background-size: cover;
-  height: 200px;
-  width: 100%;
+  background-size: cover;
+  justify-content: center;
+  width: 50%;
   border-radius: 10px;
   object-fit: cover;
-  background-color: #413f42;
 }
 
 .card-item-content {
   padding: 24px;
   background-color: #f8f9fa;
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  justify-content: center;
   align-items: flex-end;
   position: relative;
   pointer-events: none;
