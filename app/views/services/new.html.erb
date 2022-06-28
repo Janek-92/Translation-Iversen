@@ -5,7 +5,7 @@
         <%= link_to root_path do %>
         <%= image_tag "logo2.png", class:"avatar-square" %>
       </div>
-      <div class="d-flex justify-content-end align-items-center m-4">
+      <div class="d-flex justify-content-end navbar-buttons">
         <% if user_signed_in? %>
         <%= current_user.email %>
           <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
