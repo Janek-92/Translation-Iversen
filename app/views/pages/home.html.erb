@@ -10,7 +10,7 @@
         <div class="form-new">
         <%= current_user.email %>
         </div>
-          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
+          <%= button_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
         <% else %>
           <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen" %>
           <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen" %>
@@ -18,32 +18,34 @@
       </div>
     </div>
     <h1> Translations and Interpretation Services</h1>
-    <h1> <strong> IVERSEN </strong></h1>
-    <div class="container-search-bar">
-      <%= form_tag services_path, :class => "search-bar", method: :get do %>
-       <%= text_field_tag :query,
-       params[:query],
-       class: "form-control search-input",
-       placeholder: "What service do you need?"
-       %>
-       <%= submit_tag "Search", class: "nav-button-iversen" %>
-      <% end %>
+      <h1> <strong> IVERSEN </strong></h1>
+    <div class="overlay">
+      <div class="container-search-bar">
+        <%= form_tag services_path, :class => "search-bar", method: :get do %>
+         <%= text_field_tag :query,
+         params[:query],
+         class: "form-control search-input",
+         placeholder: "What service do you need?"
+         %>
+         <%= submit_tag "Search", class: "nav-button-iversen" %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
 
-  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-intro">
-    <source src="<%= image_path "introvideo.mp4" %>" type="video/mp4">
-  </video>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-intro">
+      <source src="<%= image_path "introvideo1.mp4" %>" type="video/mp4">
+    </video>
 
 
-  <div class="footer form-new">
-    <div class="footer-links">
-      <a href="https://github.com/Janek-92"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/janek-iversen-10511786"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copyright">
-      Translation & Interpretation Iversen (c) Copyright 2022
+    <div class="footer form-new">
+      <div class="footer-links">
+        <a href="https://github.com/Janek-92"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/janek-iversen-10511786"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        Translation & Interpretation Iversen (c) Copyright 2022
+      </div>
     </div>
   </div>
 </body>
