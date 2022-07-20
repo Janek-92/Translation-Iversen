@@ -28,7 +28,11 @@
                 <%= f.input :category, collection: Service::CATEGORIES, placeholder: "What's the category?", :class => "input-field" %>
                 <%= f.input :primary_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your primary language?", :class => "input-field" %>
                 <%= f.input :target_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your target language?", :class => "input-field" %>
+                <%= f.input :training, placeholder: "What training have you received?", :class => "input-field" %>
+                <%= f.input :experience, placeholder: "Tell us about your past experience in this field", :class => "input-field" %>
+                <%= f.input :years_of_experience,collection: Service::TYPES, placeholder: "How many years of experience do you have?", :class => "input-field" %>
                 <%= f.input :price, placeholder: "What's your hourly rate?", :class => "input-field" %>
+                <%= f.input :type_of_service, placeholder: "Remote or On-Site", :class => "input-field" %>
                 <%= f.input :description, placeholder: "Provide some more info!", :class => "input-field" %>
                 <%= f.input :availability, :class => "input-field" %>
                 <%= f.input :photo, as: :file, :class => "input-field" %>

@@ -1,5 +1,4 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: [:show, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
 
@@ -13,6 +12,7 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:id])
   end
 
   def new
@@ -27,17 +27,14 @@ class ServicesController < ApplicationController
   end
 
   def destroy
+    @service = Service.find(params[:id])
     @service.destroy
     redirect_to services_path
   end
 
 private
 
-  def set_service
-    @service = Service.find(params[:id])
-  end
-
   def service_params
-    params.require(:service).permit(:title, :category, :price, :description, :availability, :primary_language, :target_language, :photo)
+    params.require(:service).permit(:title, :category, :price, :description, :availability, :primary_language, :target_language, :photo, :training, :experience, :years_of_experience, :type_of_service)
   end
 end

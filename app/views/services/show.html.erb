@@ -1,0 +1,70 @@
+<body class="background-show">
+  <div class="homeHeadContent">
+    <div class="navbar navbar-expand-lg navbar-light">
+      <div class="navbar-brand">
+        <%= link_to root_path do %>
+        <img src="<%= image_path "logo2" %>" alt="Iversen Logo" class="avatar-square">
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-end navbar-buttons">
+        <%= link_to 'Work with us!', new_service_path, :class => "nav-button-work" %>
+        <% if user_signed_in? %>
+        <div class="form-new">
+        <%= current_user.email %>
+        </div>
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: 'delete', :class => "nav-button-iversen" %>
+        <% else %>
+          <%= link_to 'SIGN UP', new_user_registration_path, :class => "nav-button-iversen" %>
+          <%= link_to 'LOGIN', new_user_session_path, :class => "nav-button-iversen" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row login-form">
+      <div class="form-upload shadow-sm p-3 mb-5 bordered col-12 col-md-6 offset-lg-3 justify-content-center" style="background-color: #354558">
+        <div class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div class="centered">
+            <div class="item-card-image">
+              <% if @service.photo.key.nil? %>
+              <% else %>
+                <%= cl_image_tag @service.photo.key, class: "item-avatar" %>
+              <% end %>
+            </div>
+            <h2><%= @service.category %></h2>
+            <h3>Name:<%= @service.user.last_name %></h3>
+            <p><%= @service.primary_language %> <-> <%= @service.target_language %></p>
+            <p>Price:<%= @service.price %> € / Hour</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container contact-form">
+    <form method="post">
+        <h3>Contact Me</h3>
+       <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea name="txtMsg" class="form-control" placeholder="How can I help you? *" style="width: 100%; height: 150px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+  </div>
+</body>

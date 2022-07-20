@@ -1,4 +1,4 @@
-<body class="background">
+<body class="background-index">
   <div class="homeHeadContent">
     <div class="navbar navbar-expand-lg navbar-light">
       <div class="navbar-brand">
@@ -40,7 +40,7 @@
   <div class="cards" id="cards-container">
     <% @services.each do |service| %>
       <div class="item-card">
-        <%= link_to  service_path(@services) do %>
+        <%= link_to  service_path(service) do %>
         <div class="item-card-image">
           <% if service.photo.key.nil? %>
           <% else %>
@@ -69,4 +69,4 @@
       Translation & Interpretation Iversen (c) Copyright 2022
     </div>
   </div>
-</div>
+</body>
