@@ -52,7 +52,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: #1F2833;
+  background-color: grey;
 }
 
 .container-search-bar {
@@ -79,7 +79,40 @@
   color: grey;
 }
 
-h1 {
-  color: #C5C6C7;
+.main {
+  color: white;
   text-align: center;
+}
+
+// Cursor typing and erasing
+
+#container {
+	text-align: center;
+}
+
+#text {
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+  text-align: center;
+  font-size: 60px;
+	letter-spacing: 2px;
+}
+
+#cursor {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 50px;
+	background-color: orange;
+	animation: blink .75s step-end infinite;
+}
+
+@keyframes blink {
+	from, to {
+		background-color: transparent
+	}
+	50% {
+		background-color: orange;
+	}
 }

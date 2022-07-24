@@ -22,17 +22,20 @@
     <div class="row form-new">
       <div class="form-upload shadow-sm p-3 mb-5 bordered col-12 col-md-6 offset-lg-3 justify-content-center p-5" style="background-color: #354558">
         <div class="shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div class="centered"> <h2>Share your skills with the world!</h2></div>
+          <div class="centered"> <h2>Tell us about yourself!</h2></div>
               <%= simple_form_for(@service) do |f| %>
                 <%= f.input :title, placeholder: "Name your service", class: "form-inputs" %>
                 <%= f.input :category, collection: Service::CATEGORIES, placeholder: "What's the category?", :class => "input-field" %>
                 <%= f.input :primary_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your primary language?", :class => "input-field" %>
                 <%= f.input :target_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your target language?", :class => "input-field" %>
+                <p>Do you have other combinations?</p>
+                <%= f.input :primary_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your primary language?", :class => "input-field" %>
+                <%= f.input :target_language, collection: Service::PRIMARY_LANGUAGE, placeholder: "What is your target language?", :class => "input-field" %>
                 <%= f.input :training, placeholder: "What training have you received?", :class => "input-field" %>
                 <%= f.input :experience, placeholder: "Tell us about your past experience in this field", :class => "input-field" %>
-                <%= f.input :years_of_experience,collection: Service::TYPES, placeholder: "How many years of experience do you have?", :class => "input-field" %>
+                <%= f.input :years_of_experience, placeholder: "How many years of experience do you have?", :class => "input-field" %>
+                <%= f.input :type_of_service, collection: Service::TYPES, placeholder: "What service do you want to offer?", :class => "input-field" %>
                 <%= f.input :price, placeholder: "What's your hourly rate?", :class => "input-field" %>
-                <%= f.input :type_of_service, placeholder: "Remote or On-Site", :class => "input-field" %>
                 <%= f.input :description, placeholder: "Provide some more info!", :class => "input-field" %>
                 <%= f.input :availability, :class => "input-field" %>
                 <%= f.input :photo, as: :file, :class => "input-field" %>
