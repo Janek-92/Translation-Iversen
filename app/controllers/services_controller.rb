@@ -9,6 +9,13 @@ class ServicesController < ApplicationController
     else
       @services = Service.all
     end
+
+    @markers = @services.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show

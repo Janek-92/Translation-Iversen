@@ -66,3 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Gems added by Janek Iversen
 gem 'language-select'
 gem 'cloudinary', '~> 1.16.0'
+gem "geocoder"
+gem 'stimulus-rails'

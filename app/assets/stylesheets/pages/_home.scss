@@ -95,7 +95,7 @@
 	vertical-align: middle;
 	color: white;
   text-align: center;
-  font-size: 60px;
+  font-size: 70px;
 	letter-spacing: 2px;
 }
 
@@ -104,7 +104,7 @@
 	vertical-align: middle;
 	width: 3px;
 	height: 50px;
-	background-color: orange;
+	background-color: white;
 	animation: blink .75s step-end infinite;
 }
 
@@ -113,6 +113,6 @@
 		background-color: transparent
 	}
 	50% {
-		background-color: orange;
+		background-color: white;
 	}
 }

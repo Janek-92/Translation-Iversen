@@ -6,6 +6,8 @@ class Service < ApplicationRecord
   validates :primary_language, inclusion: { in: PRIMARY_LANGUAGE }
   validates :type_of_service, inclusion: { in: TYPES }
   belongs_to :user
+  geocoded_by :address, through: :users
+  after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings

@@ -17,10 +17,10 @@
         <% end %>
       </div>
     </div>
-    <div id="container">
-	    <div id="text"></div><div id="cursor"></div>
-    </div>
     <div class="overlay">
+      <div id="container">
+	      <div id="text"></div><div id="cursor"></div>
+      </div>
       <div class="container-search-bar">
         <%= form_tag services_path, :class => "search-bar", method: :get do %>
          <%= text_field_tag :query,
@@ -35,7 +35,7 @@
 
 
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="video-intro">
-      <source src="<%= image_path "introvideo1.mp4" %>" type="video/mp4">
+      <source src="<%= image_path "introvideo2.mp4" %>" type="video/mp4">
     </video>
 
 
