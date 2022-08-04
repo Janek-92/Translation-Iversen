@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
       {
         lat: flat.latitude,
         lng: flat.longitude
+        image_url: helpers.asset_url("logo.png")
       }
     end
   end
@@ -28,9 +29,16 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    @service.user = current_user
-    @service.save!
-    redirect_to services_path(@service)
+
+    respond_to do |format|
+      if @service.save
+        format.html { redirect_to service_url(@service), notice: "Service was successfully created." }
+        format.json { render :show, status: :created, location: @service }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @service.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
